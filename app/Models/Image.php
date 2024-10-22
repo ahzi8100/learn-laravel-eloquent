@@ -6,20 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Comment extends Model
+class Image extends Model
 {
-    protected $table = 'comments';
+    protected $table = 'images';
     protected $primaryKey = 'id';
-    protected $keyType = 'int';
+    protected $keyType = 'integer';
     public $incrementing = true;
-    public $timestamps = true;
+    public $timestamps = false;
 
-    protected $attributes = [
-        'title' => 'Sample title',
-        'comment' => 'Sample comment'
-    ];
-
-    public function commentable(): MorphTo
+    public function imageable(): MorphTo
     {
         return $this->morphTo();
     }

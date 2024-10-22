@@ -19,6 +19,8 @@ class CommentTest extends TestCase
         $comment->email = 'exp@mail.com';
         $comment->title = 'Sample Title';
         $comment->comment = 'Sample Comment';
+        $comment->commentable_id = '1';
+        $comment->commentable_type = 'product';
         $comment->save();
 
         self::assertNotNull($comment->comment);
@@ -28,6 +30,8 @@ class CommentTest extends TestCase
     {
         $comment = new Comment();
         $comment->email = 'exp@mail.com';
+        $comment->commentable_id = '1';
+        $comment->commentable_type = 'product';
         $comment->save();
 
         assertNotNull($comment->title);
